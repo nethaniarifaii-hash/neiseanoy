@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("🎈Neiseanoy")
 st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
+    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/).")
 import streamlit as st
 
 col1, col2, col3 = st.columns(3)
