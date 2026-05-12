@@ -3,25 +3,10 @@ import streamlit as st
 st.title("🎈Neiseanoy")
 st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/).")
-import time
-import numpy as np
 import pandas as pd
 import streamlit as st
+from numpy.random import default_rng as rng
 
-def stream_data():
-    for word in _LOREM_IPSUM.split(" "):
-        yield word + " "
-        time.sleep(0.02)
+df = pd.DataFrame(rng(0).standard_normal((50, 20)), columns=("col %d" % i for i in range(20)))
 
-    yield pd.DataFrame(
-        np.random.randn(5, 10),
-        columns=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"],
-    )
-
-    for word in _LOREM_IPSUM.split(" "):
-        yield word + " "
-        time.sleep(0.02)
-
-
-if st.button("Stream data"):
-    st.write_stream(stream_data)
+st.dataframe(df)
